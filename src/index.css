@@ -297,59 +297,61 @@ body, html {
 .proposal-section .report-section-header { color: var(--accent-navy); }
 .result-section .report-section-header { color: #047857; }
 
-/* TIMELINE CONTENT (Inside Tab) */
-.timeline-container-scrollable {
+/* TIMELINE CONTENT -> GRID COMPACT (Inside Tab) */
+.plans-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+    padding: 0.5rem;
+}
+
+.plan-compact-card {
+    background: white;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    border: 1px solid var(--card-border);
+    border-top: 4px solid var(--accent-navy);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    position: relative;
-    padding-left: 2rem;
-}
-
-.timeline-container-scrollable::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 45px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent-gold), rgba(201,168,76,0.1));
-}
-
-.timeline-item {
-    display: flex;
     align-items: center;
-    gap: 2rem;
-    position: relative;
-    z-index: 1;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.timeline-icon {
-    background-color: var(--accent-navy);
-    color: var(--accent-gold);
-    width: 60px;
-    height: 60px;
+.plan-compact-card:hover {
+    border-top-color: var(--accent-gold);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+}
+
+.plan-compact-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(13, 27, 62, 0.05);
+    color: var(--accent-navy);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 15px rgba(13, 27, 62, 0.2);
-    border: 3px solid white;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
 
-.timeline-content {
-    background: white;
-    padding: 1.5rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    border: 1px solid var(--card-border);
-    flex: 1;
+.plan-compact-icon i {
+    width: 24px;
+    height: 24px;
 }
 
-.timeline-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
+.plan-compact-card:hover .plan-compact-icon {
+    background: var(--accent-gold);
+    color: white;
+}
+
+.plan-compact-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
     color: var(--text-main);
     font-weight: 500;
 }
@@ -481,28 +483,7 @@ body, html {
         font-size: 1rem;
     }
     
-    .timeline-container-scrollable { 
-        padding-left: 0; 
-    }
-    
-    .timeline-container-scrollable::before { 
-        left: 20px; 
-    }
-    
-    .timeline-item { 
-        gap: 1rem; 
-    }
-    
-    .timeline-icon { 
-        width: 40px; 
-        height: 40px; 
-    }
-    
-    .timeline-content { 
-        padding: 1rem; 
-    }
-    
-    .timeline-content p {
-        font-size: 0.95rem;
+    .plans-grid-compact {
+        grid-template-columns: 1fr;
     }
 }

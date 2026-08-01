@@ -212,13 +212,13 @@ function App() {
                 <div className="header-line"></div>
               </div>
               
-              <div className="timeline-container-scrollable">
+              <div className="plans-grid-compact">
                 {plans.map((plan, index) => (
-                  <div key={index} className="timeline-item">
-                    <div className="timeline-icon">
+                  <div key={index} className="plan-compact-card">
+                    <div className="plan-compact-icon">
                       <i data-lucide={plan.icon}></i>
                     </div>
-                    <div className="timeline-content">
+                    <div className="plan-compact-text">
                       <p>{plan.text}</p>
                     </div>
                   </div>

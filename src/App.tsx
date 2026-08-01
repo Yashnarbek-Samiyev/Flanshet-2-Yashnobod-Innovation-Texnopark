@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   createIcons, 
   AlertTriangle, 
@@ -11,10 +11,13 @@ import {
   BookOpen, 
   ShoppingCart, 
   Search,
-  CheckCircle2
+  LayoutDashboard,
+  Target as TargetIcon
 } from 'lucide';
 
 function App() {
+  const [activeTab, setActiveTab] = useState<number>(1);
+
   useEffect(() => {
     createIcons({
       icons: {
@@ -28,7 +31,8 @@ function App() {
         BookOpen,
         ShoppingCart,
         Search,
-        CheckCircle2
+        LayoutDashboard,
+        TargetIcon
       }
     });
   }, []);
@@ -36,18 +40,21 @@ function App() {
   const problems = [
     {
       id: 1,
+      title: "Moddiy-texnik Baza",
       muammo: "“Yashnobod” innovatsiya texnoparkining moddiy-texnik bazasi zamonaviy talablar darajasida emas.",
       taklif: "Moddiy texnik bazasini yangilash bilan bogʻliq xarajatlarni VM-489-son qaroriga muvofiq Ilm-fanni moliyalashtirish va innovatsiyalarni qoʻllab-quvvatlash jamgʻarmasi mablagʻlari hisobidan amalga oshirish.",
       natija: "Texnoparkning moddiy-texnik bazasi zamonaviy uskunalar bilan ta'minlanadi, innovatsion infratuzilma mustahkamlanadi, rezidentlarga ko'rsatilayotgan xizmatlar sifati oshadi hamda yuqori texnologiyali loyihalarni amalga oshirish kengayadi."
     },
     {
       id: 2,
+      title: "Eksterritoriallik va Soliq",
       muammo: "Toshkent viloyatida faoliyat yuritayotgan innovatsion tadbirkorlik subyektlari eksterritoriallik mexanizmi doirasiga kiritilmagan, foyda soligʻi boʻyicha ragʻbatlar yo'q.",
       taklif: "Rezidentlarni Toshkent viloyati hududida ham eksterritoriallik tamoyili asosida joylashtirish imkoniyatini yaratish hamda foyda soligʻi boʻyicha imtiyoz joriy etish.",
       natija: "Toshkent viloyatida innovatsion tadbirkorlar koʻpayadi, yuqori texnologiyali ishlab chiqarish rivojlanadi, rezidentlar geografiyasi kengayadi, investitsiyalar jalb etiladi va yangi ish oʻrinlari yaratiladi."
     },
     {
       id: 3,
+      title: "Yangi Yer Maydoni",
       muammo: "Yashnobod innovatsiya texnoparkining mavjud ishlab chiqarish va ofis maydonlari loyihalar ko'lamini kengaytirish uchun yetarli emas.",
       taklif: "Toshkent viloyati hududidan kamida 10 gektar yer maydoni ajratish hamda zamonaviy ishlab chiqarish, laboratoriya, ofis infratuzilmasiga ega yangi texnopark majmuasini barpo etish.",
       natija: "Texnoparkning ishlab chiqarish salohiyati sezilarli darajada kengayadi. Yirik yuqori texnologiyali loyihalarni amalga oshirish imkoniyati yaratiladi."
@@ -63,6 +70,26 @@ function App() {
     { icon: 'shopping-cart', text: "Texnopark rezidentlarining mahsulotlarini elektron savdo platformalariga chiqarishga ko'maklashish." },
     { icon: 'search', text: "Texnopark huzurida loyiha ekspertizasi va texnologik audit tizimini joriy etish." }
   ];
+
+  // Re-run icons when tab changes
+  useEffect(() => {
+    createIcons({
+      icons: {
+        AlertTriangle,
+        Lightbulb,
+        Target,
+        Rocket,
+        GraduationCap,
+        TrendingUp,
+        Globe,
+        BookOpen,
+        ShoppingCart,
+        Search,
+        LayoutDashboard,
+        TargetIcon
+      }
+    });
+  }, [activeTab]);
 
   return (
     <main className="dashboard-container">
@@ -98,78 +125,110 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="header-band-title">
-          <h2 id="dashboard-title">FLANSHET-2: MUAMMOLAR VA STRATEGIK REJALAR</h2>
-        </div>
       </header>
 
-      {/* Main Content Area */}
-      <section className="main-content">
-        <div className="content-wrapper">
+      {/* Split Dashboard Body */}
+      <div className="dashboard-body">
+        
+        {/* Sidebar Menu */}
+        <aside className="sidebar">
+          <h3 className="sidebar-title">Boshqaruv Paneli</h3>
+          <nav className="sidebar-menu">
+            {problems.map((item) => (
+              <button 
+                key={item.id}
+                className={`menu-btn ${activeTab === item.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(item.id)}
+              >
+                <div className="menu-icon"><i data-lucide="layout-dashboard"></i></div>
+                <div className="menu-text">
+                  <span className="menu-label">Muammo #{item.id}</span>
+                  <span className="menu-desc">{item.title}</span>
+                </div>
+              </button>
+            ))}
+            
+            <button 
+                className={`menu-btn plan-btn ${activeTab === 4 ? 'active' : ''}`}
+                onClick={() => setActiveTab(4)}
+              >
+                <div className="menu-icon"><i data-lucide="target"></i></div>
+                <div className="menu-text">
+                  <span className="menu-label">Strategiya</span>
+                  <span className="menu-desc">Kelgusi Rejalar</span>
+                </div>
+            </button>
+          </nav>
           
-          {/* Muammolar va Takliflar (Premium Report Style) */}
-          <div className="section-block">
-            <h3 className="section-title">Muammolar va Takliflar</h3>
-            <div className="report-container">
-              {problems.map((item, index) => (
-                <div key={item.id} className="report-block">
-                  <div className="report-number">
-                    <span>{index + 1}</span>
-                  </div>
-                  <div className="report-content">
-                    <div className="report-section problem-section">
-                      <div className="report-section-header">
-                        <i data-lucide="alert-triangle"></i>
-                        <h4>Muammo</h4>
-                      </div>
-                      <p>{item.muammo}</p>
-                    </div>
-                    
-                    <div className="report-section proposal-section">
-                      <div className="report-section-header">
-                        <i data-lucide="lightbulb"></i>
-                        <h4>Taklif</h4>
-                      </div>
-                      <p>{item.taklif}</p>
-                    </div>
-                    
-                    <div className="report-section result-section">
-                      <div className="report-section-header">
-                        <i data-lucide="target"></i>
-                        <h4>Kutilayotgan Natija</h4>
-                      </div>
-                      <p>{item.natija}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="sidebar-footer">
+            <p>&copy; {new Date().getFullYear()} Yashnobod Innovatsiya Texnoparki.</p>
           </div>
+        </aside>
 
-          {/* Kelgusi Rejalar (Premium Timeline Style) */}
-          <div className="section-block">
-            <h3 className="section-title">Istiqboldagi Rejalar</h3>
-            <div className="timeline-container">
-              {plans.map((plan, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-icon">
-                    <i data-lucide={plan.icon}></i>
+        {/* Main Content View (No Scroll) */}
+        <section className="content-panel">
+          
+          {/* Render Active Problem */}
+          {activeTab >= 1 && activeTab <= 3 && (
+            <div className="active-view report-view animate-fade-in">
+              <div className="view-header">
+                <h2>Muammo va Taklif #{activeTab}: {problems[activeTab - 1].title}</h2>
+                <div className="header-line"></div>
+              </div>
+
+              <div className="report-content-full">
+                <div className="report-section problem-section">
+                  <div className="report-section-header">
+                    <i data-lucide="alert-triangle"></i>
+                    <h4>Joriy Muammo</h4>
                   </div>
-                  <div className="timeline-content">
-                    <p>{plan.text}</p>
-                  </div>
+                  <p>{problems[activeTab - 1].muammo}</p>
                 </div>
-              ))}
+                
+                <div className="report-section proposal-section">
+                  <div className="report-section-header">
+                    <i data-lucide="lightbulb"></i>
+                    <h4>Yechim & Taklif</h4>
+                  </div>
+                  <p>{problems[activeTab - 1].taklif}</p>
+                </div>
+                
+                <div className="report-section result-section">
+                  <div className="report-section-header">
+                    <i data-lucide="target"></i>
+                    <h4>Kutilayotgan Natija</h4>
+                  </div>
+                  <p>{problems[activeTab - 1].natija}</p>
+                </div>
+              </div>
             </div>
-          </div>
+          )}
 
-        </div>
-      </section>
-      
-      {/* Footer */}
-      <footer className="dashboard-footer">
-        <p>&copy; {new Date().getFullYear()} Yashnobod Innovatsiya Texnoparki. Barcha huquqlar himoyalangan.</p>
-      </footer>
+          {/* Render Plans */}
+          {activeTab === 4 && (
+            <div className="active-view plans-view animate-fade-in">
+              <div className="view-header">
+                <h2>Kelgusi Istiqboldagi Rejalar</h2>
+                <div className="header-line"></div>
+              </div>
+              
+              <div className="timeline-container-scrollable">
+                {plans.map((plan, index) => (
+                  <div key={index} className="timeline-item">
+                    <div className="timeline-icon">
+                      <i data-lucide={plan.icon}></i>
+                    </div>
+                    <div className="timeline-content">
+                      <p>{plan.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+        </section>
+      </div>
     </main>
   );
 }

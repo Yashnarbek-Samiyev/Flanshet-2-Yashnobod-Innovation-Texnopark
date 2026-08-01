@@ -441,6 +441,29 @@ body, html {
 
 /* 1. Kompyuter (Katta ekranlar) - Default styles above apply (>1200px) */
 
+/* 1.5. Bo'yi past ekranlar (Masalan, 1024x600 netbuklar) - Scroll yoqish */
+@media screen and (max-height: 800px) {
+    body, html {
+        height: auto;
+        overflow: auto;
+    }
+    .dashboard-container {
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+    .dashboard-body {
+        overflow: visible;
+    }
+    .content-panel {
+        overflow: visible !important;
+        height: auto;
+    }
+    .active-view {
+        height: auto;
+    }
+}
+
 /* 2. Laptop (O'rtacha ekranlar: 992px - 1200px) */
 @media screen and (max-width: 1200px) {
     .sidebar { width: 280px; }

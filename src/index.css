@@ -170,115 +170,214 @@ body, html {
     border-radius: 2px;
 }
 
-/* CARDS GRID (Muammolar) */
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+/* =========================================================
+   PREMIUM REPORT STYLES (Muammolar)
+========================================================= */
+.report-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-.info-card {
+.report-block {
     background: var(--card-bg);
     border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 40px rgba(13, 27, 62, 0.05);
     border: 1px solid var(--card-border);
+    border-left: 6px solid var(--accent-gold);
+    display: flex;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.report-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(13, 27, 62, 0.1);
+}
+
+.report-number {
+    background-color: rgba(201, 168, 76, 0.1);
+    color: var(--accent-gold);
+    min-width: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    border-right: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.report-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.card-item {
-    padding: 1.5rem;
+.report-section {
+    padding: 2rem;
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.card-item:last-child {
+.report-section:last-child {
     border-bottom: none;
-    flex: 1;
-    background-color: rgba(201, 168, 76, 0.05); /* very light gold */
+    background-color: rgba(238, 242, 247, 0.4);
 }
 
-.card-item-header {
+.report-section-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 1rem;
 }
 
-.card-item-header h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
+.report-section-header h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.card-item p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-muted);
+.report-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #334155; /* darker text for better readability */
 }
 
-.problem .card-item-header { color: #E11D48; }
-.proposal .card-item-header { color: var(--accent-blue); }
-.result .card-item-header { color: #059669; }
+.problem-section .report-section-header { color: #B91C1C; }
+.proposal-section .report-section-header { color: var(--accent-navy); }
+.result-section .report-section-header { color: #047857; }
 
-.card-item-header i {
-    width: 20px;
-    height: 20px;
+.report-section-header i {
+    width: 24px;
+    height: 24px;
 }
 
-/* PLANS GRID */
-.plans-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.plan-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 1.5rem;
+/* =========================================================
+   PREMIUM TIMELINE STYLES (Rejalar)
+========================================================= */
+.timeline-container {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--card-border);
-    border-left: 4px solid var(--accent-blue);
-    transition: all 0.3s ease;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
 }
 
-.plan-card:hover {
-    border-left-color: var(--accent-gold);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 45px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-gold), rgba(201,168,76,0.1));
 }
 
-.plan-icon {
-    background-color: rgba(37, 99, 235, 0.1);
-    color: var(--accent-blue);
-    width: 48px;
-    height: 48px;
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-icon {
+    background-color: var(--accent-navy);
+    color: var(--accent-gold);
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(13, 27, 62, 0.2);
+    border: 3px solid white;
+    transition: all 0.3s ease;
 }
 
-.plan-card:hover .plan-icon {
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.1);
     background-color: var(--accent-gold);
-    color: white;
+    color: var(--accent-navy);
 }
 
-.plan-text p {
-    font-size: 1rem;
-    line-height: 1.5;
+.timeline-content {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid var(--card-border);
+    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.timeline-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--text-main);
     font-weight: 500;
+}
+
+/* Footer */
+.dashboard-footer {
+    background-color: var(--accent-navy);
+    color: var(--header-text-dim);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive updates for new layout */
+@media screen and (max-width: 900px) {
+    .report-block {
+        flex-direction: column;
+    }
+    
+    .report-number {
+        min-width: 100%;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    .report-section {
+        padding: 1.5rem;
+    }
+
+    .timeline-container {
+        padding-left: 0;
+    }
+
+    .timeline-container::before {
+        left: 28px;
+    }
+
+    .timeline-item {
+        gap: 1rem;
+    }
+
+    .timeline-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .timeline-content {
+        padding: 1rem 1.5rem;
+    }
+    
+    .timeline-content p {
+        font-size: 1rem;
+    }
 }
 
 

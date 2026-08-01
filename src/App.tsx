@@ -10,7 +10,8 @@ import {
   Globe, 
   BookOpen, 
   ShoppingCart, 
-  Search 
+  Search,
+  CheckCircle2
 } from 'lucide';
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
         Globe,
         BookOpen,
         ShoppingCart,
-        Search
+        Search,
+        CheckCircle2
       }
     });
   }, []);
@@ -97,7 +99,7 @@ function App() {
           </div>
         </div>
         <div className="header-band-title">
-          <h2 id="dashboard-title">FLANSHET-2 LOYIHASI ASOSIY MA'LUMOTLARI</h2>
+          <h2 id="dashboard-title">FLANSHET-2: MUAMMOLAR VA STRATEGIK REJALAR</h2>
         </div>
       </header>
 
@@ -105,50 +107,55 @@ function App() {
       <section className="main-content">
         <div className="content-wrapper">
           
-          {/* Muammolar va Takliflar */}
+          {/* Muammolar va Takliflar (Premium Report Style) */}
           <div className="section-block">
             <h3 className="section-title">Muammolar va Takliflar</h3>
-            <div className="cards-grid">
-              {problems.map((item) => (
-                <div key={item.id} className="info-card">
-                  <div className="card-item problem">
-                    <div className="card-item-header">
-                      <i data-lucide="alert-triangle"></i>
-                      <h4>Muammo</h4>
-                    </div>
-                    <p>{item.muammo}</p>
+            <div className="report-container">
+              {problems.map((item, index) => (
+                <div key={item.id} className="report-block">
+                  <div className="report-number">
+                    <span>{index + 1}</span>
                   </div>
-                  
-                  <div className="card-item proposal">
-                    <div className="card-item-header">
-                      <i data-lucide="lightbulb"></i>
-                      <h4>Taklif</h4>
+                  <div className="report-content">
+                    <div className="report-section problem-section">
+                      <div className="report-section-header">
+                        <i data-lucide="alert-triangle"></i>
+                        <h4>Muammo</h4>
+                      </div>
+                      <p>{item.muammo}</p>
                     </div>
-                    <p>{item.taklif}</p>
-                  </div>
-                  
-                  <div className="card-item result">
-                    <div className="card-item-header">
-                      <i data-lucide="target"></i>
-                      <h4>Kutilayotgan Natija</h4>
+                    
+                    <div className="report-section proposal-section">
+                      <div className="report-section-header">
+                        <i data-lucide="lightbulb"></i>
+                        <h4>Taklif</h4>
+                      </div>
+                      <p>{item.taklif}</p>
                     </div>
-                    <p>{item.natija}</p>
+                    
+                    <div className="report-section result-section">
+                      <div className="report-section-header">
+                        <i data-lucide="target"></i>
+                        <h4>Kutilayotgan Natija</h4>
+                      </div>
+                      <p>{item.natija}</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Kelgusi Rejalar */}
+          {/* Kelgusi Rejalar (Premium Timeline Style) */}
           <div className="section-block">
-            <h3 className="section-title">Kelgusi Rejalar</h3>
-            <div className="plans-grid">
+            <h3 className="section-title">Istiqboldagi Rejalar</h3>
+            <div className="timeline-container">
               {plans.map((plan, index) => (
-                <div key={index} className="plan-card">
-                  <div className="plan-icon">
+                <div key={index} className="timeline-item">
+                  <div className="timeline-icon">
                     <i data-lucide={plan.icon}></i>
                   </div>
-                  <div className="plan-text">
+                  <div className="timeline-content">
                     <p>{plan.text}</p>
                   </div>
                 </div>
@@ -158,6 +165,11 @@ function App() {
 
         </div>
       </section>
+      
+      {/* Footer */}
+      <footer className="dashboard-footer">
+        <p>&copy; {new Date().getFullYear()} Yashnobod Innovatsiya Texnoparki. Barcha huquqlar himoyalangan.</p>
+      </footer>
     </main>
   );
 }

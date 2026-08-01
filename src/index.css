@@ -167,3 +167,73 @@ body, html {
 .mt-4 {
     margin-top: 1rem;
 }
+
+/* =========================================================
+   RESPONSIVE DESIGN (Mobile & Tablet)
+========================================================= */
+@media screen and (max-width: 900px) {
+    .header-band-logos {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .header-logo-divider {
+        width: 80%;
+        height: 1px;
+        min-height: 1px;
+        background: linear-gradient(to right, transparent, #C9A84C, transparent);
+        margin: 5px 0;
+    }
+
+    .logo-group {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .logo-caption {
+        align-items: center;
+    }
+
+    .header-logo {
+        height: 50px;
+    }
+
+    .logo-caption-main {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+
+    .logo-caption-top {
+        font-size: 0.85rem;
+    }
+    
+    .header-band-title h2 {
+        font-size: 1.1rem;
+        padding: 10px 0;
+    }
+
+    .placeholder-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .placeholder-content h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-caption-main {
+        font-size: 1.1rem;
+    }
+    
+    .logo-caption-top {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .header-logo {
+        height: 40px;
+    }
+}

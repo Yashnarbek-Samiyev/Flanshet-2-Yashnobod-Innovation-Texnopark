@@ -451,8 +451,26 @@ body, html {
 
 /* 3. Flanshet / Tablet (768px - 991px) */
 @media screen and (max-width: 991px) {
+    /* ALLOW SCROLL ON MOBILE/TABLET */
+    body, html {
+        height: auto;
+        overflow: auto;
+    }
+    .dashboard-container {
+        height: auto;
+        overflow: visible;
+    }
     .dashboard-body {
         flex-direction: column;
+        overflow: visible;
+    }
+    .content-panel {
+        overflow: visible !important;
+        height: auto;
+        padding: 1.5rem;
+    }
+    .active-view {
+        height: auto;
     }
     
     .sidebar {
@@ -490,12 +508,8 @@ body, html {
         margin-left: 5px;
     }
     
-    .content-panel {
-        padding: 1.5rem;
-    }
-    
     .header-logo { 
-        height: 6vh; 
+        height: 4.5vh; 
         min-height: 45px;
     }
 }

@@ -436,6 +436,117 @@ body, html {
 }
 
 /* =========================================================
+   RESULTS VIEW (2026 Q1/Q2)
+========================================================= */
+.results-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, #0D1B3E 0%, #1A3673 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 8px 25px rgba(13, 27, 62, 0.15);
+    border-bottom: 4px solid var(--accent-gold);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--accent-gold);
+}
+
+.stat-icon i {
+    width: 24px;
+    height: 24px;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-color: rgba(13, 27, 62, 0.2);
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    color: var(--accent-navy);
+}
+
+.feature-header i {
+    width: 28px;
+    height: 28px;
+    color: var(--accent-gold);
+}
+
+.feature-header h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.feature-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+/* =========================================================
    RESPONSIVE DESIGN (Kompyuter, Laptop, Flanshet, Phone)
 ========================================================= */
 
@@ -531,6 +642,14 @@ body, html {
         margin-left: 5px;
     }
     
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .feature-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .header-logo { 
         height: 4.5vh; 
         min-height: 45px;
@@ -590,6 +709,14 @@ body, html {
     }
     
     .plans-grid-compact {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-cards-grid {
         grid-template-columns: 1fr;
     }
 }

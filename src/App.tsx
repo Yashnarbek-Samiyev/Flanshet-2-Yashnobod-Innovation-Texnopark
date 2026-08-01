@@ -14,7 +14,12 @@ import {
   LayoutDashboard,
   Target as TargetIcon,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  BarChart,
+  Briefcase,
+  Users,
+  DollarSign,
+  Building
 } from 'lucide';
 
 function App() {
@@ -91,7 +96,12 @@ function App() {
         LayoutDashboard,
         TargetIcon,
         ChevronLeft,
-        ChevronRight
+        ChevronRight,
+        BarChart,
+        Briefcase,
+        Users,
+        DollarSign,
+        Building
       }
     });
   }, [activeTab, planPage]);
@@ -158,14 +168,25 @@ function App() {
             ))}
             
             <button 
-                className={`menu-btn plan-btn ${activeTab === 4 ? 'active' : ''}`}
-                onClick={() => setActiveTab(4)}
-              >
-                <div className="menu-icon"><i data-lucide="target"></i></div>
-                <div className="menu-text">
-                  <span className="menu-label">Strategiya</span>
-                  <span className="menu-desc">Kelgusi Rejalar</span>
-                </div>
+              className={`menu-btn plan-btn ${activeTab === 4 ? 'active' : ''}`}
+              onClick={() => setActiveTab(4)}
+            >
+              <i data-lucide="target" className="menu-icon"></i>
+              <div className="menu-text">
+                <span className="menu-label">Strategiya</span>
+                <span className="menu-desc">Kelgusi Rejalar</span>
+              </div>
+            </button>
+
+            <button 
+              className={`menu-btn result-btn ${activeTab === 5 ? 'active' : ''}`}
+              onClick={() => setActiveTab(5)}
+            >
+              <i data-lucide="bar-chart" className="menu-icon"></i>
+              <div className="menu-text">
+                <span className="menu-label">Natijalar</span>
+                <span className="menu-desc">2026-I-Yarim yillik</span>
+              </div>
             </button>
           </nav>
           
@@ -259,6 +280,62 @@ function App() {
                 >
                   Keyingi <i data-lucide="chevron-right"></i>
                 </button>
+              </div>
+            </div>
+          )}
+          {/* Render 2026 Results */}
+          {activeTab === 5 && (
+            <div className="active-view results-view animate-fade-in">
+              <div className="view-header">
+                <h2>2026-yil 1-Yarim Yillik Natijalari</h2>
+                <div className="header-line"></div>
+              </div>
+              
+              <div className="stats-grid">
+                <div className="stat-card">
+                  <div className="stat-icon"><i data-lucide="briefcase"></i></div>
+                  <div className="stat-value">47 ta</div>
+                  <div className="stat-label">Rezident korxonalar</div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-icon"><i data-lucide="users"></i></div>
+                  <div className="stat-value">1,735 ta</div>
+                  <div className="stat-label">Yaratilgan ish o'rinlari</div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-icon"><i data-lucide="trending-up"></i></div>
+                  <div className="stat-value">687 mlrd</div>
+                  <div className="stat-label">Ishlab chiqarish (so'm)</div>
+                </div>
+                <div className="stat-card">
+                  <div className="stat-icon"><i data-lucide="globe"></i></div>
+                  <div className="stat-value">164.8 mlrd</div>
+                  <div className="stat-label">Eksport hajmi (so'm)</div>
+                </div>
+              </div>
+
+              <div className="feature-cards-grid">
+                <div className="feature-card">
+                  <div className="feature-header">
+                    <i data-lucide="building"></i>
+                    <h4>Hududiy Kengayish</h4>
+                  </div>
+                  <p>Navoiy (Karmana) va Namangan (Chust) filiallari tashkil etilib, $31,000 qiymatidagi uskunalar xarid qilindi va o'rnatildi.</p>
+                </div>
+                <div className="feature-card">
+                  <div className="feature-header">
+                    <i data-lucide="lightbulb"></i>
+                    <h4>Xorij Hamkorligi</h4>
+                  </div>
+                  <p>Koreyaning STEPI va Gyeongnam texnoparklari bilan hamkorlik yo'lga qo'yildi va xorijiy sun'iy intellekt CRM tizimini joriy etish boshlandi.</p>
+                </div>
+                <div className="feature-card">
+                  <div className="feature-header">
+                    <i data-lucide="users"></i>
+                    <h4>Ta'lim va Shourum</h4>
+                  </div>
+                  <p>350 ta talaba bilan amaliy darslar o'tildi. 20 xil turdagi innovatsion mahsulotlarga ega Maxsus Shourum (Showroom) tashkil qilindi.</p>
+                </div>
               </div>
             </div>
           )}

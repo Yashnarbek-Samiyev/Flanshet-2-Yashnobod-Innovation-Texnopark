@@ -155,3 +155,15 @@ body, html {
     margin-bottom: 0.5rem;
     line-height: 1.6;
 }
+
+.text-blue-600 {
+    color: #2563EB;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}

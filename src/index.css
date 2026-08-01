@@ -272,7 +272,7 @@ body, html {
 }
 
 .report-section {
-    padding: 1.2rem 2rem;
+    padding: 2.5rem;
     border-bottom: 1px solid rgba(0,0,0,0.05);
     flex: 1;
     display: flex;
@@ -293,15 +293,15 @@ body, html {
 }
 
 .report-section-header h4 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .report-section p {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.8;
     color: #334155;
 }
 
@@ -312,17 +312,17 @@ body, html {
 /* TIMELINE CONTENT -> GRID COMPACT (Inside Tab) */
 .plans-grid-compact {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Force 4 columns to fit 7 items in 2 rows */
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for 3 items per page */
+    gap: 2rem;
     align-items: stretch;
-    padding: 0;
+    padding: 1rem 0;
 }
 
 .plan-compact-card {
     background: white;
-    padding: 1rem 0.5rem;
+    padding: 2.5rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     border: 1px solid var(--card-border);
     border-top: 4px solid var(--accent-navy);
     display: flex;
@@ -339,21 +339,21 @@ body, html {
 }
 
 .plan-compact-icon {
-    width: 36px;
-    height: 36px;
+    width: 60px;
+    height: 60px;
     background: rgba(13, 27, 62, 0.05);
     color: var(--accent-navy);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .plan-compact-icon i {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .plan-compact-card:hover .plan-compact-icon {
@@ -362,10 +362,67 @@ body, html {
 }
 
 .plan-compact-text p {
-    font-size: 0.85rem;
-    line-height: 1.3;
+    font-size: 1.1rem;
+    line-height: 1.6;
     color: var(--text-main);
     font-weight: 500;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.page-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--accent-navy);
+    border: 1px solid var(--card-border);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.page-btn i { width: 18px; height: 18px; }
+
+.page-btn:hover:not(:disabled) {
+    background: var(--accent-navy);
+    color: white;
+    border-color: var(--accent-navy);
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.page-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.page-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(13, 27, 62, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-dot.active {
+    background: var(--accent-gold);
+    transform: scale(1.3);
 }
 
 /* Animations */
@@ -484,11 +541,11 @@ body, html {
     }
     
     .report-section {
-        padding: 1.2rem;
+        padding: 1.5rem;
     }
 
     .report-section-header h4 {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
 
     .report-section p {

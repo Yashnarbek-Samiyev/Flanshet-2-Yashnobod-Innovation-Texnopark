@@ -12,11 +12,14 @@ import {
   ShoppingCart, 
   Search,
   LayoutDashboard,
-  Target as TargetIcon
+  Target as TargetIcon,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide';
 
 function App() {
   const [activeTab, setActiveTab] = useState<number>(1);
+  const [planPage, setPlanPage] = useState<number>(0);
 
   useEffect(() => {
     createIcons({
@@ -86,10 +89,16 @@ function App() {
         ShoppingCart,
         Search,
         LayoutDashboard,
-        TargetIcon
+        TargetIcon,
+        ChevronLeft,
+        ChevronRight
       }
     });
-  }, [activeTab]);
+  }, [activeTab, planPage]);
+
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(plans.length / itemsPerPage);
+  const currentPlans = plans.slice(planPage * itemsPerPage, (planPage + 1) * itemsPerPage);
 
   return (
     <main className="dashboard-container">
@@ -204,7 +213,7 @@ function App() {
             </div>
           )}
 
-          {/* Render Plans */}
+          {/* Render Plans with Pagination */}
           {activeTab === 4 && (
             <div className="active-view plans-view animate-fade-in">
               <div className="view-header">
@@ -213,8 +222,8 @@ function App() {
               </div>
               
               <div className="plans-grid-compact">
-                {plans.map((plan, index) => (
-                  <div key={index} className="plan-compact-card">
+                {currentPlans.map((plan, index) => (
+                  <div key={index} className="plan-compact-card animate-fade-in">
                     <div className="plan-compact-icon">
                       <i data-lucide={plan.icon}></i>
                     </div>
@@ -223,6 +232,33 @@ function App() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Pagination Controls */}
+              <div className="pagination-controls">
+                <button 
+                  className="page-btn" 
+                  disabled={planPage === 0}
+                  onClick={() => setPlanPage(p => Math.max(0, p - 1))}
+                >
+                  <i data-lucide="chevron-left"></i> Oldingi
+                </button>
+                <div className="page-dots">
+                  {Array.from({ length: totalPages }).map((_, idx) => (
+                    <span 
+                      key={idx} 
+                      className={`page-dot ${planPage === idx ? 'active' : ''}`}
+                      onClick={() => setPlanPage(idx)}
+                    />
+                  ))}
+                </div>
+                <button 
+                  className="page-btn" 
+                  disabled={planPage === totalPages - 1}
+                  onClick={() => setPlanPage(p => Math.min(totalPages - 1, p + 1))}
+                >
+                  Keyingi <i data-lucide="chevron-right"></i>
+                </button>
               </div>
             </div>
           )}

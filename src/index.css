@@ -223,34 +223,39 @@ body, html {
 .content-panel {
     flex: 1;
     background-color: var(--bg-main);
-    padding: 3rem;
-    overflow-y: auto; /* Internal scroll only for the content */
+    padding: 1.5rem;
+    overflow: hidden !important; /* STRICTLY NO SCROLL */
     display: flex;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .active-view {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .view-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .view-header h2 {
     color: var(--accent-navy);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: -0.5px;
 }
 
 .header-line {
     width: 80px;
-    height: 5px;
+    height: 4px;
     background-color: var(--accent-gold);
-    margin-top: 15px;
-    border-radius: 3px;
+    margin-top: 10px;
+    border-radius: 2px;
 }
 
 /* REPORT CONTENT (Inside Tab) */
@@ -260,12 +265,19 @@ body, html {
     box-shadow: 0 10px 40px rgba(13, 27, 62, 0.05);
     border: 1px solid var(--card-border);
     border-left: 6px solid var(--accent-gold);
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
 }
 
 .report-section {
-    padding: 2.5rem;
+    padding: 1.2rem 2rem;
     border-bottom: 1px solid rgba(0,0,0,0.05);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .report-section:last-child {
@@ -276,20 +288,20 @@ body, html {
 .report-section-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 1rem;
+    gap: 10px;
+    margin-bottom: 0.5rem;
 }
 
 .report-section-header h4 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .report-section p {
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.5;
     color: #334155;
 }
 
@@ -300,17 +312,17 @@ body, html {
 /* TIMELINE CONTENT -> GRID COMPACT (Inside Tab) */
 .plans-grid-compact {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr); /* Force 4 columns to fit 7 items in 2 rows */
+    gap: 1rem;
     align-items: stretch;
-    padding: 0.5rem;
+    padding: 0;
 }
 
 .plan-compact-card {
     background: white;
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     border: 1px solid var(--card-border);
     border-top: 4px solid var(--accent-navy);
     display: flex;
@@ -323,25 +335,25 @@ body, html {
 .plan-compact-card:hover {
     border-top-color: var(--accent-gold);
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .plan-compact-icon {
-    width: 50px;
-    height: 50px;
+    width: 36px;
+    height: 36px;
     background: rgba(13, 27, 62, 0.05);
     color: var(--accent-navy);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     transition: all 0.3s ease;
 }
 
 .plan-compact-icon i {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
 }
 
 .plan-compact-card:hover .plan-compact-icon {
@@ -350,8 +362,8 @@ body, html {
 }
 
 .plan-compact-text p {
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    line-height: 1.3;
     color: var(--text-main);
     font-weight: 500;
 }

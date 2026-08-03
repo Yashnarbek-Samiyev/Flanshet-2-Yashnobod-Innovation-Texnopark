@@ -7,7 +7,8 @@ import {
   CheckCircle2, 
   XCircle, 
   RefreshCw, 
-  PlusCircle 
+  PlusCircle,
+  Monitor
 } from 'lucide-react';
 import './AmalgaOshirilganIshlar.css';
 
@@ -138,6 +139,22 @@ export const AmalgaOshirilganIshlar = () => {
             </div>
           </div>
 
+        </div>
+      </div>
+
+      {/* Digitalization Platform Section */}
+      <div className="digitalization-section animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <div className="digitalization-card">
+          <div className="digital-icon">
+            <Monitor size={32} />
+          </div>
+          <div className="digital-content">
+            <h3>Raqamlashtirish va Platformalar</h3>
+            <p>Texnopark faoliyatini raqamlashtirish hamda rezidentlarga masofaviy xizmat ko'rsatish maqsadida to'liq ishlaydigan yangi zamonaviy veb-tizim ishlab chiqildi va ishga tushirildi.</p>
+            <a href="https://innovationtechnopark.com/" target="_blank" rel="noopener noreferrer" className="digital-link">
+              innovationtechnopark.com
+            </a>
+          </div>
         </div>
       </div>
 

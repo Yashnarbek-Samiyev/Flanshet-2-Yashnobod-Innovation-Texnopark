@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Building2, 
   Users, 
@@ -5,11 +6,65 @@ import {
   PackageSearch, 
   Globe2, 
   Monitor,
-  DollarSign
+  DollarSign,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import './AmalgaOshirilganIshlar.css';
 
 export const AmalgaOshirilganIshlar = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const platformSlides = [
+    {
+      title: "“Yashnobod” Innovatsion Texnoparki Axborot Platformasi",
+      bullets: [
+        "Asosiy maqsad: Texnopark faoliyatini raqamlashtirish, rezidentlar ma'lumotlarini yagona elektron bazaga jamlash va shaffoflikni ta'minlash.",
+        "Status: Innovatsion rivojlanish agentligi huzuridagi 'Yashnobod' innovatsion texnoparkining boshqaruv va integratsiya portali.",
+        "Imkoniyat: Startap loyihalar, ilmiy-tadqiqotlar va innovatsion bizneslarni rag'batlantirish hamda imtiyozlardan foydalanish jarayonini avtomatlashtirish."
+      ],
+      note: "Ushbu platforma 'Yashnobod' innovatsion texnoparki faoliyatini to'liq raqamlashtirish maqsadida yaratilgan. Platforma texnopark rezidentlarining yagona reyestrini shakllantiradi hamda davlat organlari va vazirliklar bilan integratsiyalashgan holda ishlash imkonini beradi."
+    },
+    {
+      title: "Platformaning Asosiy Imkoniyatlari",
+      bullets: [
+        "Rezidentlar reyestri: Rezidentlarning holati (active / inactive), yo'nalishi, mahsulotlari hamda ularga berilgan sertifikatlar va soliq imtiyozlari bazasi.",
+        "KPI monitoringi (Samaradorlik ko'rsatkichlari): Yangi yaratilgan ish o'rinlari soni, ishlab chiqarish va xizmat ko'rsatish hajmlari hamda eksport monitoringi (reja va amaldagi natija).",
+        "Ma'lumotlar tahlili: Rezidentlar faoliyatini Excel/jadval ko'rinishida ko'rish va tahlil qilish imkoniyati."
+      ],
+      note: "Platformada har bir rezidentning profili yaratilgan bo'lib, ularning soliq imtiyozlari olishga asos bo'lgan sertifikatlari, faoliyat muddati va kutilayotgan KPI ko'rsatkichlarini onlayn rejimda kuzatish mumkin."
+    },
+    {
+      title: "Zamonaviy Identifikatsiya va Xavfsizlik",
+      bullets: [
+        "OneID (Yagona identifikatsiya tizimi): Portalga milliy OneID tizimi orqali xavfsiz va tezkor kirish integratsiyasi.",
+        "E-Imzo (Elektron raqamli imzo): Tizimda foydalanuvchilarning shaxsini tasdiqlash va hujjatlarni tasdiqlash uchun E-Imzo modali o'rnatilgan.",
+        "Telegram OTP Autentifikatsiya: Foydalanuvchilar va ma'murlar uchun Telegram orqali bir martalik kod (OTP) yordamida kirish.",
+        "Audit jurnali (AuditLog): Tizimdagi har bir o'zgarish, ma'muriy harakatlar va API so'rovlari audit loglarida xavfsiz saqlanadi."
+      ],
+      note: "Tizim xavfsizligini ta'minlash va foydalanuvchilarni autentifikatsiya qilish uchun milliy tizimlar – OneID va E-Imzodan foydalanilgan. Shuningdek, ma'murlar xavfsizligi uchun Telegram orqali ikki bosqichli OTP tizimi joriy qilingan."
+    },
+    {
+      title: "Idoralararo Integratsiyalashuv (IIP) va Tashqi API",
+      bullets: [
+        "Idoralararo Integratsiyalashuv Platformasi (IIP): Boshqa vazirlik va idoralar (masalan, Iqtisodiyot va moliya vazirligining 'Subsidiya' axborot tizimi) bilan integratsiya.",
+        "REST API v0: Rezidentlar holatini avtomatlashtirilgan tarzda olish uchun xavfsiz API kanali.",
+        "Himoya va Nazorat: Basic Auth & API Key, IP Whitelisting va Rate Limiting cheklovlari."
+      ],
+      note: "Bizning platforma boshqa davlat idoralari bilan hamkorlikda ishlash uchun ham mo'ljallangan. Masalan, Iqtisodiyot va moliya vazirligining 'Subsidiya' tizimi ushbu API orqali texnopark rezidentlarining statusini avtomatik tekshirib, ularga subsidiyalarni qog'ozbozliksiz ajratish imkoniga ega bo'ladi."
+    },
+    {
+      title: "Tizimning Texnologik Steki (Texnik Arxitektura)",
+      bullets: [
+        "Front-end: Next.js (React) — foydalanuvchilar va rezidentlar uchun tezkor, optimallashgan va dinamik interfeys.",
+        "Back-end & Database: Prisma ORM va SQLite ma'lumotlar bazasi (ishonchli, yengil va tezkor integratsiya uchun).",
+        "API Standarti: OpenAPI (Swagger) spesifikasiyasiga asoslangan hujjatlashtirish va integratsiya.",
+        "Avtomatlashtirilgan deploy: Shell-skriptlar yordamida uzluksiz integratsiya (CI/CD) va PM2 orqali barqaror ish faoliyati."
+      ],
+      note: "Platformamiz Next.js, Prisma va SQLite kabi eng zamonaviy texnologiyalar yordamida ishlab chiqilgan. Bu portalning nafaqat tez ishlashini, balki kelajakda kengaytirilishini va boshqa davlat dasturlariga oson integratsiya qilinishini ta'minlaydi."
+    }
+  ];
+
   return (
     <div className="amalga-oshirilgan-container animate-fade-in">
       <div className="view-header">
@@ -137,14 +192,46 @@ export const AmalgaOshirilganIshlar = () => {
             <Monitor size={24} />
           </div>
           <div className="premium-card-content">
-            <p className="premium-label">Raqamli Platforma</p>
-            <div className="premium-value-row">
-              <h3 style={{ fontSize: '1.8rem' }}>Ishga Tushirildi</h3>
+            <div className="platform-header-row">
+              <p className="premium-label">Raqamli Platforma</p>
+              <a href="https://innovationtechnopark.com/" target="_blank" rel="noopener noreferrer" className="platform-link-badge">
+                innovationtechnopark.com
+              </a>
             </div>
-            <p className="premium-desc" style={{ marginBottom: '10px' }}>Texnopark faoliyatini raqamlashtirish tizimi</p>
-            <a href="https://innovationtechnopark.com/" target="_blank" rel="noopener noreferrer" className="platform-link-badge">
-              innovationtechnopark.com
-            </a>
+
+            {/* Interactive Slideshow */}
+            <div className="platform-slideshow">
+              <div className="slideshow-header">
+                <h4>{platformSlides[activeSlide].title}</h4>
+                <div className="slideshow-controls">
+                  <button 
+                    onClick={() => setActiveSlide((prev) => (prev === 0 ? platformSlides.length - 1 : prev - 1))}
+                    className="slide-btn"
+                  >
+                    <ChevronLeft size={16} />
+                  </button>
+                  <span className="slide-counter">{activeSlide + 1} / {platformSlides.length}</span>
+                  <button 
+                    onClick={() => setActiveSlide((prev) => (prev === platformSlides.length - 1 ? 0 : prev + 1))}
+                    className="slide-btn"
+                  >
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
+              </div>
+
+              <ul className="slide-bullets">
+                {platformSlides[activeSlide].bullets.map((bullet, idx) => (
+                  <li key={idx}>{bullet}</li>
+                ))}
+              </ul>
+
+              <div className="slide-speech-note">
+                <span className="speech-badge">Nutq uchun (Izoh):</span>
+                <p>"{platformSlides[activeSlide].note}"</p>
+              </div>
+            </div>
+
           </div>
         </div>
 

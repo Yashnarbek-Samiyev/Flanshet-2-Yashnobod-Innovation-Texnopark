@@ -139,7 +139,64 @@ export const Natijalar2026 = ({ onBack }: { onBack: () => void }) => {
                 <ArrowLeft size={18} /> Menyuga qaytish
             </button>
 
-            <div className="main-content-section" style={{ padding: '20px', paddingTop: '60px', flex: 1 }}>
+            {/* Original Dashboard Header */}
+            <header className="dashboard-header">
+                {/* Band 1: Logos */}
+                <div className="header-band-logos">
+                    <div className="logo-group">
+                        <img src="/agency_logo.png" alt="Агентлиги" className="header-logo" />
+                        <div className="logo-caption">
+                            <span className="logo-caption-top">ИННОВАЦИОН</span>
+                            <span className="logo-caption-main">РИВОЖЛАНИШ</span>
+                            <span className="logo-caption-top">АГЕНТЛИГИ</span>
+                        </div>
+                    </div>
+                    <div className="header-logo-divider"></div>
+                    <div className="logo-group">
+                        <img src="/logo.png" alt="Яшнобод" className="header-logo" />
+                        <div className="logo-caption">
+                            <span className="logo-caption-main">“ЯШНОБОД”</span>
+                            <span className="logo-caption-top">ИННОВАЦИЯ ТЕХНОПАРКИ</span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Band 2: Main Title */}
+                <div className="header-band-title">
+                    <h2 id="dashboard-title">“ЯШНОБОД” ИННОВАЦИЯ ТЕХНОПАРКИ ВА РЕЗИДЕНТЛАРИ ФАОЛИЯТИ ТЎҒРИСИДА МАЪЛУМОТ</h2>
+                </div>
+
+                {/* Band 3: Controls */}
+                <div className="header-band-controls">
+                    <div className="year-selector">
+                        <button className="year-btn">2025</button>
+                        <button className="year-btn active">2026</button>
+                    </div>
+
+                    <div className="dropdowns-group">
+                        <div className={`services-dropdown ${isResidentsOpen ? 'open' : ''}`}>
+                            <button className="services-dropdown-btn" onClick={() => setIsResidentsOpen(!isResidentsOpen)}>
+                                <Building2 size={20} />
+                                <span className="dropdown-text">Асосий резидентлар лойиҳалари</span>
+                                <ChevronDown size={16} className="chevron" />
+                            </button>
+                            <div className="services-dropdown-content">
+                                {residentsData.map((r, index) => (
+                                    <div key={index} className="service-item" onClick={() => {
+                                        setModalData({title: r.name, desc: r.desc, icon: r.icon});
+                                        setIsResidentsOpen(false);
+                                    }}>
+                                        <span className="service-index">{index + 1}.</span> 
+                                        <div className="service-name">{r.name}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div className="main-content-section" style={{ padding: '20px', flex: 1 }}>
                 
                 <div className="stats-grid">
                     {/* Residents Card */}
@@ -199,25 +256,6 @@ export const Natijalar2026 = ({ onBack }: { onBack: () => void }) => {
                             <div className="card-header" style={{ position: 'relative' }}>
                                 <Layers size={20} />
                                 <span>Асосий резидентлар лойиҳалари</span>
-                                <div style={{marginLeft: 'auto'}}>
-                                    <div className={`services-dropdown ${isResidentsOpen ? 'open' : ''}`}>
-                                        <button className="services-dropdown-btn" onClick={() => setIsResidentsOpen(!isResidentsOpen)}>
-                                            <span className="dropdown-text">Рўйхатни кўриш</span>
-                                            <ChevronDown size={16} className="chevron" />
-                                        </button>
-                                        <div className="services-dropdown-content">
-                                            {residentsData.map((r, index) => (
-                                                <div key={index} className="service-item" onClick={() => {
-                                                    setModalData({title: r.name, desc: r.desc, icon: r.icon});
-                                                    setIsResidentsOpen(false);
-                                                }}>
-                                                    <span className="service-index">{index + 1}.</span> 
-                                                    <div className="service-name">{r.name}</div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             
                             <div className="services-main-list">

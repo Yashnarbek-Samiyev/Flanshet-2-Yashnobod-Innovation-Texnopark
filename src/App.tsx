@@ -152,16 +152,7 @@ function App() {
           <aside className="sidebar">
             <h3 className="sidebar-title">Boshqaruv Paneli</h3>
           <nav className="sidebar-menu">
-            <button 
-              className={`menu-btn result-btn ${activeTab === 5 ? 'active' : ''}`}
-              onClick={() => setActiveTab(5)}
-            >
-              <i data-lucide="bar-chart" className="menu-icon"></i>
-              <div className="menu-text">
-                <span className="menu-label">Natijalar</span>
-                <span className="menu-desc">2026-I-Yarim yillik</span>
-              </div>
-            </button>
+
 
             {problems.map((prob) => (
               <button 

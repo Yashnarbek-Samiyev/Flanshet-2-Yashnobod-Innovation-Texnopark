@@ -115,26 +115,25 @@ export const AmalgaOshirilganIshlar = () => {
             </div>
           </div>
         </div>
-
-      </div>
-
-
-
-      {/* Digitalization Platform Section */}
-      <div className="digitalization-section animate-fade-in" style={{ animationDelay: '0.2s' }}>
-        <div className="digitalization-card">
-          <div className="digital-icon">
-            <Monitor size={32} />
+        {/* Digital Platform Card */}
+        <div className="premium-card platform-card">
+          <div className="card-icon-wrapper blue-icon">
+            <Monitor size={24} />
           </div>
-          <div className="digital-content">
-            <h3>Raqamlashtirish va Platformalar</h3>
-            <p>Texnopark faoliyatini raqamlashtirish hamda rezidentlarga masofaviy xizmat ko'rsatish maqsadida to'liq ishlaydigan yangi zamonaviy veb-tizim ishlab chiqildi va ishga tushirildi.</p>
-            <a href="https://innovationtechnopark.com/" target="_blank" rel="noopener noreferrer" className="digital-link">
+          <div className="premium-card-content">
+            <p className="premium-label">Raqamli Platforma</p>
+            <div className="premium-value-row">
+              <h3 style={{ fontSize: '1.8rem' }}>Ishga Tushirildi</h3>
+            </div>
+            <p className="premium-desc" style={{ marginBottom: '10px' }}>Texnopark faoliyatini raqamlashtirish tizimi</p>
+            <a href="https://innovationtechnopark.com/" target="_blank" rel="noopener noreferrer" className="platform-link-badge">
               innovationtechnopark.com
             </a>
           </div>
         </div>
+
       </div>
+
 
     </div>
   );

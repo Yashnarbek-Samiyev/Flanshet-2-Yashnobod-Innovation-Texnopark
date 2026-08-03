@@ -177,66 +177,32 @@
 .digitalization-section {
     margin-top: 30px;
 }
-
-.digitalization-card {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    border-radius: 16px;
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .digitalization-card {
-        flex-direction: column;
-        text-align: center;
+/* Platform Card Span and Link Badge Styles */
+@media (min-width: 1025px) {
+    .platform-card {
+        grid-column: span 2;
     }
 }
 
-.digital-icon {
-    width: 70px;
-    height: 70px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #60a5fa;
-    flex-shrink: 0;
-}
-
-.digital-content h3 {
-    margin: 0 0 8px 0;
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.digital-content p {
-    margin: 0 0 16px 0;
-    color: #94a3b8;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.digital-link {
+.platform-link-badge {
     display: inline-block;
-    padding: 8px 20px;
+    padding: 6px 14px;
+    background: #eff6ff;
+    color: #2563eb;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1px solid #dbeafe;
+    transition: all 0.2s ease;
+}
+
+.platform-link-badge:hover {
     background: #3b82f6;
     color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.2s;
-}
-
-.digital-link:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
 }
 
 /* Export countries badges style */

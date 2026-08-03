@@ -254,3 +254,97 @@
     object-fit: cover;
     height: 14px;
 }
+
+/* Trade Detailed Stats styling */
+.trade-detailed-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+    .trade-detailed-stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.trade-detail-item {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.trade-detail-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.export-bg {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+}
+
+.import-bg {
+    background: #fffbeb;
+    border-color: #fef3c7;
+}
+
+.trade-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.trade-detail-icon-wrap {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.trade-detail-icon-wrap svg {
+    display: block;
+}
+
+.currency-symbol-uzs {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.trade-detail-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.trade-detail-value {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.trade-detail-value span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.trade-detail-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 500;
+}

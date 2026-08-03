@@ -4,7 +4,8 @@ import {
   TrendingUp, 
   PackageSearch, 
   Globe2, 
-  Monitor
+  Monitor,
+  DollarSign
 } from 'lucide-react';
 import './AmalgaOshirilganIshlar.css';
 
@@ -82,14 +83,29 @@ export const AmalgaOshirilganIshlar = () => {
           </div>
           <div className="premium-card-content">
             <p className="premium-label">Tashqi Savdo Aylanmasi</p>
-            <div className="trade-stats">
-              <div className="trade-item">
-                <span className="trade-label text-success">Eksport</span>
-                <span className="trade-value">$9.2 mln</span>
+            <div className="trade-detailed-stats">
+              {/* Export Detail */}
+              <div className="trade-detail-item export-bg">
+                <div className="trade-detail-header">
+                  <div className="trade-detail-icon-wrap text-success">
+                    <DollarSign size={16} />
+                  </div>
+                  <span className="trade-detail-title">Eksport</span>
+                </div>
+                <div className="trade-detail-value text-success">$9.2 <span>mln</span></div>
+                <p className="trade-detail-desc">Sanoat mahsulotlari qo'shni davlatlarga eksport qilindi.</p>
               </div>
-              <div className="trade-item">
-                <span className="trade-label text-warning">Import</span>
-                <span className="trade-value">146.2 mlrd</span>
+
+              {/* Import Detail */}
+              <div className="trade-detail-item import-bg">
+                <div className="trade-detail-header">
+                  <div className="trade-detail-icon-wrap text-warning">
+                    <span className="currency-symbol-uzs">so'm</span>
+                  </div>
+                  <span className="trade-detail-title">Import</span>
+                </div>
+                <div className="trade-detail-value text-warning">146.2 <span>mlrd</span></div>
+                <p className="trade-detail-desc">Butlovchi qismlar, xom ashyo va materiallar import qilindi.</p>
               </div>
             </div>
             <div className="export-countries">

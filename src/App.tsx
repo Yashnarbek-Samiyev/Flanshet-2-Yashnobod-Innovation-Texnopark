@@ -23,7 +23,7 @@ import {
 } from 'lucide';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<number>(4);
 
   useEffect(() => {
     createIcons({
@@ -151,6 +151,16 @@ function App() {
             <h3 className="sidebar-title">Boshqaruv Paneli</h3>
           <nav className="sidebar-menu">
 
+            <button 
+              className={`menu-btn plan-btn ${activeTab === 4 ? 'active' : ''}`}
+              onClick={() => setActiveTab(4)}
+            >
+              <i data-lucide="target" className="menu-icon"></i>
+              <div className="menu-text">
+                <span className="menu-label">Strategiya</span>
+                <span className="menu-desc">Kelgusi Rejalar</span>
+              </div>
+            </button>
 
             {problems.map((prob) => (
               <button 
@@ -166,16 +176,6 @@ function App() {
               </button>
             ))}
             
-            <button 
-              className={`menu-btn plan-btn ${activeTab === 4 ? 'active' : ''}`}
-              onClick={() => setActiveTab(4)}
-            >
-              <i data-lucide="target" className="menu-icon"></i>
-              <div className="menu-text">
-                <span className="menu-label">Strategiya</span>
-                <span className="menu-desc">Kelgusi Rejalar</span>
-              </div>
-            </button>
           </nav>
           
           <div className="sidebar-footer">

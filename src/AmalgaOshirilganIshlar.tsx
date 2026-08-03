@@ -17,51 +17,47 @@ export const AmalgaOshirilganIshlar = () => {
 
   const platformSlides = [
     {
-      title: "“Yashnobod” Innovatsion Texnoparki Axborot Platformasi",
+      title: "1. Telegram OTP va OneID autentifikatsiyasi",
       bullets: [
-        "Asosiy maqsad: Texnopark faoliyatini raqamlashtirish, rezidentlar ma'lumotlarini yagona elektron bazaga jamlash va shaffoflikni ta'minlash.",
-        "Status: Innovatsion rivojlanish agentligi huzuridagi 'Yashnobod' innovatsion texnoparkining boshqaruv va integratsiya portali.",
-        "Imkoniyat: Startap loyihalar, ilmiy-tadqiqotlar va innovatsion bizneslarni rag'batlantirish hamda imtiyozlardan foydalanish jarayonini avtomatlashtirish."
+        "Telegram Bot orqali kirish: Foydalanuvchilar va ma'murlar tizimga xavfsiz kirish uchun @yaitcombot Telegram boti orqali yuboriladigan 6 xonali bir martalik vaqtinchalik paroldan (OTP) foydalanishadi (kod 3 daqiqa davomida amal qiladi).",
+        "OneID (id.egov.uz) Integratsiyasi: Tizimga kirishda OneID yagona identifikatsiya tizimi simulyatori orqali xodimlar va ma'murlar profillarini avtomatik ro'yxatdan o'tkazish va identifikatsiyalash to'liq ishlaydi."
       ],
-      note: "Ushbu platforma 'Yashnobod' innovatsion texnoparki faoliyatini to'liq raqamlashtirish maqsadida yaratilgan. Platforma texnopark rezidentlarining yagona reyestrini shakllantiradi hamda davlat organlari va vazirliklar bilan integratsiyalashgan holda ishlash imkonini beradi."
+      note: "Tizimga kirishda xavfsizlikni oshirish uchun @yaitcombot telegram boti orqali ikki bosqichli OTP parollar hamda milliy OneID integratsiyasi to'liq joriy etilgan."
     },
     {
-      title: "Platformaning Asosiy Imkoniyatlari",
+      title: "2. Excel va SQLite ikki tomonlama integratsiyasi (Admin paneli)",
       bullets: [
-        "Rezidentlar reyestri: Rezidentlarning holati (active / inactive), yo'nalishi, mahsulotlari hamda ularga berilgan sertifikatlar va soliq imtiyozlari bazasi.",
-        "KPI monitoringi (Samaradorlik ko'rsatkichlari): Yangi yaratilgan ish o'rinlari soni, ishlab chiqarish va xizmat ko'rsatish hajmlari hamda eksport monitoringi (reja va amaldagi natija).",
-        "Ma'lumotlar tahlili: Rezidentlar faoliyatini Excel/jadval ko'rinishida ko'rish va tahlil qilish imkoniyati."
+        "Excel interaktiv jadvali: Admin panelida ma'lumot.xlsx faylidagi barcha ma'lumotlar real vaqt rejimida o'qib olinadi va veb-interfeysda interaktiv jadval ko'rinishida taqdim etiladi.",
+        "On-the-fly (Katak ichida) tahrirlash: Ma'murlar jadvaldagi istalgan ma'lumotni ustiga ikki marta bosish (double-click) orqali to'g'ridan-to'g'ri tahrirlay oladilar.",
+        "Ma'lumotlar sinxronizatsiyasi: Tahrirlangan yoki yangi kiritilgan ma'lumotlar bazada saqlanishi bilan bir vaqtda Python skripti yordamida asosiy ma'lumot.xlsx Excel fayliga ham avtomatik yoziladi.",
+        "Yangi rezident qo'shish va o'chirish: Yangi rezidentlarni maxsus oyna orqali bazaga qo'shish va eskirganlarini o'chirish funksiyasi to'liq joriy etilgan."
       ],
-      note: "Platformada har bir rezidentning profili yaratilgan bo'lib, ularning soliq imtiyozlari olishga asos bo'lgan sertifikatlari, faoliyat muddati va kutilayotgan KPI ko'rsatkichlarini onlayn rejimda kuzatish mumkin."
+      note: "Admin panel orqali ma'lumotlar o'zgartirilganda, tizim SQLite bazasi bilan birga ma'lumot.xlsx Excel faylini ham Python yordamida real vaqtda yangilab boradi."
     },
     {
-      title: "Zamonaviy Identifikatsiya va Xavfsizlik",
+      title: "3. Rezidentlar reyestri va KPI ko'rsatkichlari monitoringi",
       bullets: [
-        "OneID (Yagona identifikatsiya tizimi): Portalga milliy OneID tizimi orqali xavfsiz va tezkor kirish integratsiyasi.",
-        "E-Imzo (Elektron raqamli imzo): Tizimda foydalanuvchilarning shaxsini tasdiqlash va hujjatlarni tasdiqlash uchun E-Imzo modali o'rnatilgan.",
-        "Telegram OTP Autentifikatsiya: Foydalanuvchilar va ma'murlar uchun Telegram orqali bir martalik kod (OTP) yordamida kirish.",
-        "Audit jurnali (AuditLog): Tizimdagi har bir o'zgarish, ma'muriy harakatlar va API so'rovlari audit loglarida xavfsiz saqlanadi."
+        "Avtomatik status tekshiruvi: Rezidentlik muddati tugagan tashkilotlar holati (statusi) tizim tomonidan avtomatik ravishda active'dan inactive (nofaol) holatga o'tkaziladi.",
+        "KPI va natijalar tahlili: Har bir rezident bo'yicha yaratilgan ish o'rinlari, ishlab chiqarish hajmi va eksport ko'rsatkichlarining rejasi hamda amaldagi natijalari foiz hisobida hisoblab boriladi.",
+        "Tezkor qidiruv va filtrlash: Jamoatchilik sahifasida rezidentlarni nomi, INN (STIR) raqami yoki faoliyat sohasi bo'yicha soniyalar ichida saralash imkoniyati ma'lum."
       ],
-      note: "Tizim xavfsizligini ta'minlash va foydalanuvchilarni autentifikatsiya qilish uchun milliy tizimlar – OneID va E-Imzodan foydalanilgan. Shuningdek, ma'murlar xavfsizligi uchun Telegram orqali ikki bosqichli OTP tizimi joriy qilingan."
+      note: "Rezidentlar reyestri orqali har bir rezidentning holati, muddati va KPI ko'rsatkichlari (ish o'rinlari, eksport va mahsulot hajmi) onlayn rejimda nazorat qilinadi."
     },
     {
-      title: "Idoralararo Integratsiyalashuv (IIP) va Tashqi API",
+      title: "4. Davlat organlari uchun xavfsiz REST API (v0)",
       bullets: [
-        "Idoralararo Integratsiyalashuv Platformasi (IIP): Boshqa vazirlik va idoralar (masalan, Iqtisodiyot va moliya vazirligining 'Subsidiya' axborot tizimi) bilan integratsiya.",
-        "REST API v0: Rezidentlar holatini avtomatlashtirilgan tarzda olish uchun xavfsiz API kanali.",
-        "Himoya va Nazorat: Basic Auth & API Key, IP Whitelisting va Rate Limiting cheklovlari."
+        "Tashqi integratsiya endpointi: /api/v0/residents-external API kanali orqali hamkor davlat idoralari (masalan, Iqtisodiyot va moliya vazirligining 'Subsidiya' tizimi) rezidentlik sertifikati mavjudligini avtomatik tekshira oladi.",
+        "Ko'p bosqichli API xavfsizligi: Basic Auth (login va parol) hamda maxsus API Key protokollari orqali himoyalangan.",
+        "IP Whitelisting & Rate Limiting: API faqat ruxsat berilgan serverlar IP manzillaridan so'rov qabul qiladi hamda daqiqasiga maksimal 60 ta so'rov cheklovi o'rnatilgan."
       ],
-      note: "Bizning platforma boshqa davlat idoralari bilan hamkorlikda ishlash uchun ham mo'ljallangan. Masalan, Iqtisodiyot va moliya vazirligining 'Subsidiya' tizimi ushbu API orqali texnopark rezidentlarining statusini avtomatik tekshirib, ularga subsidiyalarni qog'ozbozliksiz ajratish imkoniga ega bo'ladi."
+      note: "Ushbu API yordamida moliya vazirligi kabi tashqi idoralar rezidentlar statusini real vaqtda tekshirib, ularga subsidiyalarni tezroq va qog'ozbozliksiz ajratish imkoniga ega."
     },
     {
-      title: "Tizimning Texnologik Steki (Texnik Arxitektura)",
+      title: "5. Harakatlar auditi (AuditLog)",
       bullets: [
-        "Front-end: Next.js (React) — foydalanuvchilar va rezidentlar uchun tezkor, optimallashgan va dinamik interfeys.",
-        "Back-end & Database: Prisma ORM va SQLite ma'lumotlar bazasi (ishonchli, yengil va tezkor integratsiya uchun).",
-        "API Standarti: OpenAPI (Swagger) spesifikasiyasiga asoslangan hujjatlashtirish va integratsiya.",
-        "Avtomatlashtirilgan deploy: Shell-skriptlar yordamida uzluksiz integratsiya (CI/CD) va PM2 orqali barqaror ish faoliyati."
+        "Tizim xavfsizligi monitoringi: Ma'murlarning tizimga kirishi, rezidentlarni qo'shishi, o'chirishi yoki Excel jadvalini o'zgartirishi kabi barcha muhim amallar tizim xotirasida (AuditLog ma'lumotlar bazasida) vaqti va bajaruvchi shaxs ma'lumotlari bilan birga yozib boriladi."
       ],
-      note: "Platformamiz Next.js, Prisma va SQLite kabi eng zamonaviy texnologiyalar yordamida ishlab chiqilgan. Bu portalning nafaqat tez ishlashini, balki kelajakda kengaytirilishini va boshqa davlat dasturlariga oson integratsiya qilinishini ta'minlaydi."
+      note: "Audit loglari kim, qachon va qanday o'zgarish qilganini to'liq yozib boradi. Bu esa tizim xavfsizligi va shaffoflikni eng yuqori darajada ta'minlaydi."
     }
   ];
 

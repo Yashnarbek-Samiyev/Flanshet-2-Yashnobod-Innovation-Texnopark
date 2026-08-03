@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Яшнобод инновация технопарки | 2025 Сарҳисоби</title>
+    <link rel="stylesheet" href="style.css?v=2026.38">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <main class="dashboard-container">
+        <!-- Header Section (New 3-Band Design) -->
+        <header class="dashboard-header">
+
+            <!-- Band 1: Logos -->
+            <div class="header-band-logos">
+                <div class="logo-group">
+                    <img src="agency_logo.png" alt="Агентлиги" class="header-logo">
+                    <div class="logo-caption">
+                        <span class="logo-caption-top">ИННОВАЦИОН</span>
+                        <span class="logo-caption-main">РИВОЖЛАНИШ</span>
+                        <span class="logo-caption-top">АГЕНТЛИГИ</span>
+                    </div>
+                </div>
+
+                <div class="header-logo-divider"></div>
+
+                <div class="logo-group">
+                    <img src="logo.png" alt="Яшнобод" class="header-logo">
+                    <div class="logo-caption">
+                        <span class="logo-caption-main">“ЯШНОБОД”</span>
+                        <span class="logo-caption-top">ИННОВАЦИЯ ТЕХНОПАРКИ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Band 2: Main Title -->
+            <div class="header-band-title">
+                <h2 id="dashboard-title">“ЯШНОБОД” ИННОВАЦИЯ ТЕХНОПАРКИ ВА РЕЗИДЕНТЛАРИ ФАОЛИЯТИ ТЎҒРИСИДА МАЪЛУМОТ</h2>
+            </div>
+
+            <!-- Band 3: Controls -->
+            <div class="header-band-controls">
+                <div class="year-selector">
+                    <button class="year-btn active" onclick="switchYear(2025)">2025</button>
+                    <button class="year-btn" onclick="switchYear(2026)">2026</button>
+                </div>
+
+                <div class="dropdowns-group">
+                    <div class="services-dropdown" id="residents-dropdown">
+                        <button class="services-dropdown-btn" id="residentsDropdownBtn">
+                            <i data-lucide="building-2"></i>
+                            <span class="dropdown-text">Асосий резидентлар лойиҳалари</span>
+                            <i data-lucide="chevron-down" class="chevron"></i>
+                        </button>
+                        <div class="services-dropdown-content" id="residents-dropdown-content">
+                            <!-- Dynamic generated via script.js -->
+                        </div>
+                    </div>
+                    
+                    <div class="services-dropdown" id="services-dropdown">
+                        <button class="services-dropdown-btn" id="servicesDropdownBtn">
+                            <i data-lucide="layers"></i>
+                            <span class="dropdown-text">Технопарк томонидан кўрсатиладиган хизмат турлари</span>
+                            <i data-lucide="chevron-down" class="chevron"></i>
+                        </button>
+                        <div class="services-dropdown-content" id="services-dropdown-content">
+                            <!-- Dynamic generated via script.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- Main Content (Light) -->
+        <section class="main-content-section">
+            <section class="stats-grid">
+                <!-- Residents Card -->
+                <div class="card glass-card residents-card" id="card-residents">
+                    <div class="card-header">
+                        <i data-lucide="users"></i>
+                        <span>Резидентлар фаолияти</span>
+                    </div>
+                    <div class="sectors-header">
+                        <span class="sectors-count">17</span>
+                        <span class="sectors-label">та фаолият соҳалари сони</span>
+                    </div>
+                    <div class="sectors-list" id="sectors-list">
+                        <!-- Dynamic sectors -->
+                    </div>
+                    <div class="card-body">
+                        <div class="main-stat">
+                            <p>Жами резидентлар</p>
+                            <h2><span id="total-residents">38</span><span class="stat-suffix">та</span> <span id="residents-growth-badge" class="growth-badge" style="display:none;"><i data-lucide="trending-up" style="width:16px; height:16px; margin-right:6px;"></i>+6</span></h2>
+                        </div>
+                    </div>
+                    <div class="sub-stats">
+                        <div class="sub-stat-item" id="contacted-row">
+                            <span class="label">Музокара ўтказилган тадбиркорлар</span>
+                            <span class="value"><span id="contacted-count">800</span><span class="stat-suffix-sm">та</span></span>
+                        </div>
+                        <div class="sub-stat-item">
+                            <span class="label">Қабул қилинган аризалар</span>
+                            <span class="value"><span id="applied-count">40</span><span class="stat-suffix-sm">та</span></span>
+                        </div>
+                        <div class="sub-stat-item highlight">
+                            <span class="label">Резидентлик мақоми берилган</span>
+                            <span class="value"><span id="new-residents">21</span><span class="stat-suffix-sm">та</span></span>
+                        </div>
+                        <div class="info-footer">
+                            <p class="small-text">Барча лойиҳалар экстерриториаллик асосида фаолият юритмоқда</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2 WRAPPER -->
+                <div class="grid-column-wrapper" style="display: flex; flex-direction: column; gap: 1.8vh; height: 100%;">
+                    <!-- Services Card (Stretches downwards) -->
+                    <div class="card glass-card services-card" style="flex: 1;">
+                        <div class="card-header">
+                            <i data-lucide="layers"></i>
+                            <span>Кўрсатилаётган хизмат турлари</span>
+                            <span class="dropdown-badge white-badge" id="services-badge-main" style="display:none; margin-left: 8px;">+2</span>
+                        </div>
+                        <!-- List filled dynamically by script.js -->
+                        <div class="services-main-list" id="services-main-list" style="margin-top: 1vh;"></div>
+                    </div>
+
+                    <!-- Jobs Card (Squeezed at the bottom) -->
+                    <div class="card glass-card jobs-card">
+                        <div class="card-header">
+                            <i data-lucide="briefcase"></i>
+                            <span>Инсон капитали</span>
+                        </div>
+                        <div class="card-body jobs-content-flex">
+                            <div class="main-stat">
+                                <div class="number-with-icon">
+                                    <div class="stat-icon-wrapper">
+                                        <i data-lucide="users" class="stat-icon-color"></i>
+                                    </div>
+                                    <h2><span id="jobs-created">1136</span><span class="stat-suffix">та</span> <span id="jobs-growth-badge" class="growth-badge" style="display:none;"><i data-lucide="trending-up" style="width:16px; height:16px; margin-right:6px;"></i>+102</span></h2>
+                                </div>
+                                <p>Яратилган иш ўринлари</p>
+                            </div>
+                            <div class="jobs-illustration-box" style="transform: scale(0.8); transform-origin: bottom right;">
+                                <!-- Rasmga o'xshash korporativ dizayndagi SVG -->
+                                <svg class="colored-illustration" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Orqa fon - Yengil doiralar (Theme Glassy Background) -->
+                                    <circle cx="60" cy="65" r="50" fill="#EEF2F7"/>
+                                    <circle cx="60" cy="65" r="38" fill="#E0E7FF"/>
+                                    
+                                    <!-- O'ng tomondagi odam (O'rtacha ko'k) -->
+                                    <path d="M 75,100 C 75,70 100,70 100,100" fill="#3B82F6"/>
+                                    <circle cx="87.5" cy="55" r="12" fill="#93C5FD"/>
+                                    
+                                    <!-- Chap tomondagi odam (Slate kulrang) -->
+                                    <path d="M 20,100 C 20,70 45,70 45,100" fill="#64748B"/>
+                                    <circle cx="32.5" cy="55" r="12" fill="#94A3B8"/>
+                                    
+                                    <!-- O'rtadagi asosiy odam (Dashboard to'q ko'k guruh rahbari) -->
+                                    <path d="M 40,105 C 40,65 80,65 80,105" fill="#0A2560"/>
+                                    <circle cx="60" cy="50" r="15" fill="#2563EB"/>
+                                    
+                                    <!-- Dekorativ elementlar: O'sish grafikasi / Yulduzlar (Oltin rang - Gold) -->
+                                    <!-- Tepaga strelka (Gold) -->
+                                    <path d="M 85,45 L 85,25 L 90,25 L 80,10 L 70,25 L 75,25 L 75,45 Z" fill="#C9A84C"/>
+                                    <!-- Kichik yulduzlar/nuqtalar (Gold va to'q ko'k aralashmasi) -->
+                                    <circle cx="30" cy="25" r="3.5" fill="#C9A84C"/>
+                                    <circle cx="95" cy="45" r="4.5" fill="#0A2560"/>
+                                    <circle cx="45" cy="15" r="2.5" fill="#C9A84C"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3 WRAPPER -->
+                <div class="grid-column-wrapper" style="display: flex; flex-direction: column; gap: 1.8vh; height: 100%;">
+                    <!-- Economic Production Card -->
+                    <div class="card glass-card production-card">
+                        <div class="card-header">
+                            <i data-lucide="wallet"></i>
+                            <span>Иқтисодий кўрсаткич (млрд сўм)</span>
+                        </div>
+                        <div class="main-stat" style="margin-top: 5px;">
+                            <h2 id="total-production" style="font-size: clamp(2rem, 4.5vh, 4rem);">894,8</h2>
+                            <p style="margin-top: 5px; margin-bottom: 2vh;">Умумий ишлаб чиқариш ҳажми</p>
+                        </div>
+                        <div class="production-breakdown">
+                            <div class="breakdown-item">
+                                <div class="row-flex">
+                                    <span>Ички бозор: <span id="domestic-sales">721,1</span></span>
+                                </div>
+                                <div class="breakdown-bar">
+                                    <div class="bar-fill domestic" style="width: 80.6%;"></div>
+                                </div>
+                            </div>
+                            <div class="breakdown-item">
+                                <div class="row-flex">
+                                    <span>Экспорт: <span id="export-sales">173,7</span></span>
+                                </div>
+                                <div class="breakdown-bar">
+                                    <div class="bar-fill export" style="width: 19.4%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Export Geography (Stretches downwards to fill space) -->
+                    <div class="card glass-card export-card" style="flex: 1;">
+                        <div class="card-header">
+                            <i data-lucide="globe"></i>
+                            <span>Экспорт давлатлари</span>
+                        </div>
+                        <div class="countries-list">
+                            <!-- Dynamic -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- News Ticker for text-based highlights -->
+        <div class="news-ticker-container" id="news-container" style="display: none;">
+            <div class="ticker-badge">Янгиликлар:</div>
+            <div class="ticker-wrap">
+                <div class="ticker-move" id="news-ticker-content">
+                    <!-- Dynamic Text -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="dashboard-footer">
+            <p>&copy; 2025-2026 Яшнобод инновация технопарки | Барча ҳуқуқлар ҳимояланган</p>
+        </footer>
+
+        <!-- Modal Overlay -->
+        <div class="modal-overlay" id="sector-modal" onclick="closeModal(event)">
+            <div class="modal-content glass-card" onclick="event.stopPropagation()">
+                <div class="modal-header-custom">
+                    <div class="modal-title-group" id="modal-title-group">
+                        <i data-lucide="cpu"></i>
+                        <h3 id="modal-title">Электроника</h3>
+                    </div>
+                    <button class="modal-close" onclick="closeModal()">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-desc">Маълумот...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js?v=2026.38"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { AmalgaOshirilganIshlar } from './AmalgaOshirilganIshlar';
 import { 
   createIcons, 
   AlertTriangle, 
@@ -23,7 +24,7 @@ import {
 } from 'lucide';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<number>(4);
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   useEffect(() => {
     createIcons({
@@ -119,9 +120,9 @@ function App() {
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <div className="logo-caption">
-              <span className="logo-caption-top">ИННОВАЦИОН</span>
-              <span className="logo-caption-main">РИВОЖЛАНИШ</span>
-              <span className="logo-caption-top">АГЕНТЛИГИ</span>
+              <span className="logo-caption-top">INNOVATSION</span>
+              <span className="logo-caption-main">RIVOJLANISH</span>
+              <span className="logo-caption-top">AGENTLIGI</span>
             </div>
           </div>
 
@@ -130,13 +131,13 @@ function App() {
           <div className="logo-group">
             <img 
               src="https://yashnarbek-samiyev.github.io/yashnobodtexnopark-2026/logo.png" 
-              alt="Яшнобод" 
+              alt="Yashnobod" 
               className="header-logo" 
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
             <div className="logo-caption">
-              <span className="logo-caption-main">“ЯШНОБОД”</span>
-              <span className="logo-caption-top">ИННОВАЦИЯ ТЕХНОПАРКИ</span>
+              <span className="logo-caption-main">“YASHNOBOD”</span>
+              <span className="logo-caption-top">INNOVATSIYA TEXNOPARKI</span>
             </div>
           </div>
         </div>
@@ -150,6 +151,17 @@ function App() {
         <aside className="sidebar">
             <h3 className="sidebar-title">Boshqaruv Paneli</h3>
           <nav className="sidebar-menu">
+
+            <button 
+              className={`menu-btn plan-btn ${activeTab === 0 ? 'active' : ''}`}
+              onClick={() => setActiveTab(0)}
+            >
+              <i data-lucide="bar-chart" className="menu-icon"></i>
+              <div className="menu-text">
+                <span className="menu-label">Hisobot</span>
+                <span className="menu-desc">Amalga oshirilgan ishlar</span>
+              </div>
+            </button>
 
             <button 
               className={`menu-btn plan-btn ${activeTab === 4 ? 'active' : ''}`}
@@ -186,6 +198,11 @@ function App() {
         {/* Main Content View (No Scroll) */}
         <section className="content-panel">
           
+          {/* Render 2026 Q2 Work Done */}
+          {activeTab === 0 && (
+            <AmalgaOshirilganIshlar />
+          )}
+
           {/* Render Active Problem */}
           {activeTab >= 1 && activeTab <= 3 && (
             <div className="active-view report-view animate-fade-in">

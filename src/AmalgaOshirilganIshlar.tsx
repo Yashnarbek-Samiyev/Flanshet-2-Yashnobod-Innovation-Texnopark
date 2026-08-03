@@ -92,7 +92,27 @@ export const AmalgaOshirilganIshlar = () => {
                 <span className="trade-value">146.2 mlrd</span>
               </div>
             </div>
-            <p className="premium-desc">Asosiy eksport: Belarus, Rossiya, Qozog'iston</p>
+            <div className="export-countries">
+              <span className="export-countries-title">Eksport Davlatlari:</span>
+              <div className="countries-grid">
+                <div className="country-badge">
+                  <img src="https://flagcdn.com/w40/kz.png" width="20" alt="Qozog'iston" className="flag-icon" />
+                  <span>Qozog'iston</span>
+                </div>
+                <div className="country-badge">
+                  <img src="https://flagcdn.com/w40/kg.png" width="20" alt="Qirg'iziston" className="flag-icon" />
+                  <span>Qirg'iziston</span>
+                </div>
+                <div className="country-badge">
+                  <img src="https://flagcdn.com/w40/tj.png" width="20" alt="Tojikiston" className="flag-icon" />
+                  <span>Tojikiston</span>
+                </div>
+                <div className="country-badge">
+                  <img src="https://flagcdn.com/w40/ru.png" width="20" alt="Rossiya" className="flag-icon" />
+                  <span>Rossiya</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

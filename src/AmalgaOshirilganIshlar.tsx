@@ -116,18 +116,43 @@ export const AmalgaOshirilganIshlar = () => {
           </div>
           <div className="premium-card-content">
             <p className="premium-label">Sanoat Mahsulotlari</p>
-            <div className="premium-value-row">
-              <h3>463.3 <span>mlrd</span></h3>
+            
+            <div className="trade-detailed-stats">
+              {/* Total Production */}
+              <div className="trade-detail-item total-prod-bg">
+                <div className="trade-detail-header">
+                  <div className="trade-detail-icon-wrap text-gold">
+                    <span className="currency-symbol-uzs">so'm</span>
+                  </div>
+                  <span className="trade-detail-title">Jami Ishlab Chiqarish</span>
+                </div>
+                <div className="trade-detail-value text-gold">463.3 <span>mlrd</span></div>
+                <p className="trade-detail-desc">Hisobot davrida jami sanoat mahsulotlari ishlab chiqarildi.</p>
+              </div>
+
+              {/* Domestic Market */}
+              <div className="trade-detail-item domestic-bg">
+                <div className="trade-detail-header">
+                  <div className="trade-detail-icon-wrap text-blue">
+                    <span className="currency-symbol-uzs">so'm</span>
+                  </div>
+                  <span className="trade-detail-title">Ichki Bozor</span>
+                </div>
+                <div className="trade-detail-value text-blue">354.2 <span>mlrd</span></div>
+                <p className="trade-detail-desc">Mahsulotlar ichki bozorga realizatsiya qilindi (76.4%).</p>
+              </div>
             </div>
-            <div className="mini-progress-wrapper">
+
+            <div className="mini-progress-wrapper" style={{ marginTop: '12px' }}>
               <div className="mini-progress-labels">
-                <span>Ichki bozor (354.2 mlrd)</span>
+                <span>Ichki Bozor Ulushi</span>
                 <span>76.4%</span>
               </div>
               <div className="mini-progress-bar">
                 <div className="mini-progress-fill" style={{ width: '76.4%' }}></div>
               </div>
             </div>
+
           </div>
         </div>
 

@@ -462,3 +462,22 @@
     font-style: italic;
     line-height: 1.45;
 }
+
+/* Production card details specific colors */
+.total-prod-bg {
+    background: #fffbeb;
+    border-color: #fef3c7;
+}
+
+.domestic-bg {
+    background: #f0f9ff;
+    border-color: #e0f2fe;
+}
+
+.text-gold {
+    color: #d97706;
+}
+
+.text-blue {
+    color: #0284c7;
+}

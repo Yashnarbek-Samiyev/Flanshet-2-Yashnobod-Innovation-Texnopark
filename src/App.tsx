@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Natijalar2026 } from './Natijalar2026';
 import { 
   createIcons, 
   AlertTriangle, 
@@ -254,59 +255,7 @@ function App() {
           )}
           {/* Render 2026 Results */}
           {activeTab === 5 && (
-            <div className="active-view results-view animate-fade-in">
-              <div className="view-header">
-                <h2>2026-yil 1-Yarim Yillik Natijalari</h2>
-                <div className="header-line"></div>
-              </div>
-              
-              <div className="stats-grid">
-                <div className="stat-card">
-                  <div className="stat-icon"><i data-lucide="briefcase"></i></div>
-                  <div className="stat-value">47 ta</div>
-                  <div className="stat-label">Rezident korxonalar</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-icon"><i data-lucide="users"></i></div>
-                  <div className="stat-value">1,735 ta</div>
-                  <div className="stat-label">Yaratilgan ish o'rinlari</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-icon"><i data-lucide="trending-up"></i></div>
-                  <div className="stat-value">687 mlrd</div>
-                  <div className="stat-label">Ishlab chiqarish (so'm)</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-icon"><i data-lucide="globe"></i></div>
-                  <div className="stat-value">164.8 mlrd</div>
-                  <div className="stat-label">Eksport hajmi (so'm)</div>
-                </div>
-              </div>
-
-              <div className="feature-cards-grid">
-                <div className="feature-card">
-                  <div className="feature-header">
-                    <i data-lucide="building"></i>
-                    <h4>Hududiy Kengayish</h4>
-                  </div>
-                  <p>Navoiy (Karmana) va Namangan (Chust) filiallari tashkil etilib, $31,000 qiymatidagi uskunalar xarid qilindi va o'rnatildi.</p>
-                </div>
-                <div className="feature-card">
-                  <div className="feature-header">
-                    <i data-lucide="lightbulb"></i>
-                    <h4>Xorij Hamkorligi</h4>
-                  </div>
-                  <p>Koreyaning STEPI va Gyeongnam texnoparklari bilan hamkorlik yo'lga qo'yildi va xorijiy sun'iy intellekt CRM tizimini joriy etish boshlandi.</p>
-                </div>
-                <div className="feature-card">
-                  <div className="feature-header">
-                    <i data-lucide="users"></i>
-                    <h4>Ta'lim va Shourum</h4>
-                  </div>
-                  <p>350 ta talaba bilan amaliy darslar o'tildi. 20 xil turdagi innovatsion mahsulotlarga ega Maxsus Shourum (Showroom) tashkil qilindi.</p>
-                </div>
-              </div>
-            </div>
+            <Natijalar2026 />
           )}
 
         </section>

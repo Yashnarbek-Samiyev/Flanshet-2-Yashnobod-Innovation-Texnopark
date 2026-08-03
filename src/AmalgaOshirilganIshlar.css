@@ -12,9 +12,10 @@
     margin-bottom: 30px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .premium-stats-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 }
 
@@ -178,7 +179,7 @@
     margin-top: 30px;
 }
 /* Platform Card Span and Link Badge Styles */
-@media (min-width: 1025px) {
+@media (min-width: 769px) {
     .platform-card {
         grid-column: span 2;
     }
@@ -263,7 +264,7 @@
     margin-top: 8px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
     .trade-detailed-stats {
         flex-direction: column;
         gap: 12px;
@@ -480,4 +481,31 @@
 
 .text-blue {
     color: #0284c7;
+}
+
+/* Phone and Small Screen Optimization */
+@media (max-width: 640px) {
+    .amalga-oshirilgan-container {
+        padding: 16px;
+    }
+    .premium-card {
+        padding: 16px;
+        gap: 16px;
+    }
+    .card-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+    .premium-value-row h3 {
+        font-size: 1.8rem;
+    }
+    .slideshow-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .slideshow-controls {
+        align-self: flex-end;
+    }
 }

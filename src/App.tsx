@@ -23,7 +23,7 @@ import {
 } from 'lucide';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<number>(5);
 
   useEffect(() => {
     createIcons({
@@ -149,16 +149,27 @@ function App() {
         <aside className="sidebar">
           <h3 className="sidebar-title">Boshqaruv Paneli</h3>
           <nav className="sidebar-menu">
-            {problems.map((item) => (
+            <button 
+              className={`menu-btn result-btn ${activeTab === 5 ? 'active' : ''}`}
+              onClick={() => setActiveTab(5)}
+            >
+              <i data-lucide="bar-chart" className="menu-icon"></i>
+              <div className="menu-text">
+                <span className="menu-label">Natijalar</span>
+                <span className="menu-desc">2026-I-Yarim yillik</span>
+              </div>
+            </button>
+
+            {problems.map((prob) => (
               <button 
-                key={item.id}
-                className={`menu-btn ${activeTab === item.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(item.id)}
+                key={prob.id}
+                className={`menu-btn ${activeTab === prob.id ? 'active' : ''}`}
+                onClick={() => setActiveTab(prob.id)}
               >
                 <div className="menu-icon"><i data-lucide="layout-dashboard"></i></div>
                 <div className="menu-text">
-                  <span className="menu-label">Muammo #{item.id}</span>
-                  <span className="menu-desc">{item.title}</span>
+                  <span className="menu-label">{prob.id}-Muammo</span>
+                  <span className="menu-desc">{prob.title}</span>
                 </div>
               </button>
             ))}
@@ -171,17 +182,6 @@ function App() {
               <div className="menu-text">
                 <span className="menu-label">Strategiya</span>
                 <span className="menu-desc">Kelgusi Rejalar</span>
-              </div>
-            </button>
-
-            <button 
-              className={`menu-btn result-btn ${activeTab === 5 ? 'active' : ''}`}
-              onClick={() => setActiveTab(5)}
-            >
-              <i data-lucide="bar-chart" className="menu-icon"></i>
-              <div className="menu-text">
-                <span className="menu-label">Natijalar</span>
-                <span className="menu-desc">2026-I-Yarim yillik</span>
               </div>
             </button>
           </nav>

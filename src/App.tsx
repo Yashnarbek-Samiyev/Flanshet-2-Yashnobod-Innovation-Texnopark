@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Natijalar2026 } from './Natijalar2026';
 import { 
   createIcons, 
   AlertTriangle, 
@@ -24,7 +23,7 @@ import {
 } from 'lucide';
 
 function App() {
-  const [activeTab, setActiveTab] = useState<number>(5);
+  const [activeTab, setActiveTab] = useState<number>(1);
 
   useEffect(() => {
     createIcons({
@@ -147,9 +146,8 @@ function App() {
       <div className="dashboard-body">
         
         
-        {/* Sidebar Menu - Hide when on 2026 Results tab (activeTab === 5) */}
-        {activeTab !== 5 && (
-          <aside className="sidebar">
+        {/* Sidebar Menu */}
+        <aside className="sidebar">
             <h3 className="sidebar-title">Boshqaruv Paneli</h3>
           <nav className="sidebar-menu">
 
@@ -184,10 +182,9 @@ function App() {
             <p>&copy; {new Date().getFullYear()} Yashnobod Innovatsiya Texnoparki.</p>
           </div>
         </aside>
-        )}
 
         {/* Main Content View (No Scroll) */}
-        <section className="content-panel" style={activeTab === 5 ? { padding: 0 } : {}}>
+        <section className="content-panel">
           
           {/* Render Active Problem */}
           {activeTab >= 1 && activeTab <= 3 && (
@@ -247,10 +244,7 @@ function App() {
               </div>
             </div>
           )}
-          {/* Render 2026 Results */}
-          {activeTab === 5 && (
-            <Natijalar2026 onBack={() => setActiveTab(1)} />
-          )}
+
 
         </section>
       </div>

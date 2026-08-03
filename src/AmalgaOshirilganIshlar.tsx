@@ -4,10 +4,6 @@ import {
   TrendingUp, 
   PackageSearch, 
   Globe2, 
-  CheckCircle2, 
-  XCircle, 
-  RefreshCw, 
-  PlusCircle,
   Monitor
 } from 'lucide-react';
 import './AmalgaOshirilganIshlar.css';
@@ -102,45 +98,7 @@ export const AmalgaOshirilganIshlar = () => {
 
       </div>
 
-      {/* Resident Status Movements */}
-      <div className="resident-status-section">
-        <h3 className="section-subtitle">Rezidentlik Holati O'zgarishlari</h3>
-        <div className="status-cards-row">
-          
-          <div className="status-card new-status">
-            <PlusCircle size={20} />
-            <div className="status-info">
-              <h4>9 ta</h4>
-              <p>Yangi maqom berildi</p>
-            </div>
-          </div>
 
-          <div className="status-card extended-status">
-            <RefreshCw size={20} />
-            <div className="status-info">
-              <h4>1 ta</h4>
-              <p>Maqom uzaytirildi</p>
-            </div>
-          </div>
-
-          <div className="status-card terminated-status">
-            <XCircle size={20} />
-            <div className="status-info">
-              <h4>3 ta</h4>
-              <p>Maqom tugatildi</p>
-            </div>
-          </div>
-          
-          <div className="status-card total-status">
-            <CheckCircle2 size={20} />
-            <div className="status-info">
-              <h4>Eksterritorial</h4>
-              <p>Asosida faoliyat yuritmoqda</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
 
       {/* Digitalization Platform Section */}
       <div className="digitalization-section animate-fade-in" style={{ animationDelay: '0.2s' }}>

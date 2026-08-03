@@ -171,65 +171,7 @@
     color: #1e293b;
 }
 
-/* Status Cards */
-.resident-status-section {
-    margin-top: 30px;
-}
 
-.section-subtitle {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 16px;
-}
-
-.status-cards-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
-
-@media (max-width: 1024px) {
-    .status-cards-row {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.status-card {
-    background: white;
-    padding: 16px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    border: 1px solid #e2e8f0;
-}
-
-.status-info h4 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.status-info p {
-    margin: 2px 0 0 0;
-    font-size: 0.8rem;
-    color: #64748b;
-    font-weight: 500;
-}
-
-.new-status { border-left: 4px solid #3b82f6; }
-.new-status svg { color: #3b82f6; }
-
-.extended-status { border-left: 4px solid #10b981; }
-.extended-status svg { color: #10b981; }
-
-.terminated-status { border-left: 4px solid #ef4444; }
-.terminated-status svg { color: #ef4444; }
-
-.total-status { border-left: 4px solid #8b5cf6; }
-.total-status svg { color: #8b5cf6; }
 
 /* Digitalization Platform Section */
 .digitalization-section {

@@ -146,9 +146,11 @@ function App() {
       {/* Split Dashboard Body */}
       <div className="dashboard-body">
         
-        {/* Sidebar Menu */}
-        <aside className="sidebar">
-          <h3 className="sidebar-title">Boshqaruv Paneli</h3>
+        
+        {/* Sidebar Menu - Hide when on 2026 Results tab (activeTab === 5) */}
+        {activeTab !== 5 && (
+          <aside className="sidebar">
+            <h3 className="sidebar-title">Boshqaruv Paneli</h3>
           <nav className="sidebar-menu">
             <button 
               className={`menu-btn result-btn ${activeTab === 5 ? 'active' : ''}`}
@@ -191,9 +193,10 @@ function App() {
             <p>&copy; {new Date().getFullYear()} Yashnobod Innovatsiya Texnoparki.</p>
           </div>
         </aside>
+        )}
 
         {/* Main Content View (No Scroll) */}
-        <section className="content-panel">
+        <section className="content-panel" style={activeTab === 5 ? { padding: 0 } : {}}>
           
           {/* Render Active Problem */}
           {activeTab >= 1 && activeTab <= 3 && (
@@ -255,7 +258,7 @@ function App() {
           )}
           {/* Render 2026 Results */}
           {activeTab === 5 && (
-            <Natijalar2026 />
+            <Natijalar2026 onBack={() => setActiveTab(1)} />
           )}
 
         </section>

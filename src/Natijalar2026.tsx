@@ -5,7 +5,7 @@ import {
   Briefcase, Wallet, Globe, MapPin, X, Cpu, Bot, 
   Utensils, Home, Leaf, Flame, Milestone, Zap, 
   Wheat, Stethoscope, Car, Thermometer, Printer, 
-  FlaskConical, Hammer, Box
+  FlaskConical, Hammer, Box, ArrowLeft
 } from 'lucide-react';
 
 // Data from 2026
@@ -108,13 +108,38 @@ const AnimatedNumber = ({ value, duration = 1000 }: { value: number, duration?: 
     return <>{count}</>;
 };
 
-export const Natijalar2026 = () => {
+export const Natijalar2026 = ({ onBack }: { onBack: () => void }) => {
     const [modalData, setModalData] = useState<{title: string, desc: string, icon: string} | null>(null);
     const [isResidentsOpen, setIsResidentsOpen] = useState(false);
 
     return (
-        <div className="yashnobod-2026-theme active-view animate-fade-in" style={{ height: '100%', display: 'flex', flexDirection: 'column', padding: 0 }}>
-            <div className="main-content-section" style={{ padding: '20px', flex: 1 }}>
+        <div className="yashnobod-2026-theme active-view animate-fade-in" style={{ height: '100%', display: 'flex', flexDirection: 'column', padding: 0, position: 'relative' }}>
+            {/* Back Button */}
+            <button 
+                onClick={onBack}
+                style={{
+                    position: 'absolute',
+                    top: '15px',
+                    left: '15px',
+                    zIndex: 100,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '8px 16px',
+                    background: '#0D1B3E',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    fontWeight: 600,
+                    fontSize: '14px',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
+                }}
+            >
+                <ArrowLeft size={18} /> Menyuga qaytish
+            </button>
+
+            <div className="main-content-section" style={{ padding: '20px', paddingTop: '60px', flex: 1 }}>
                 
                 <div className="stats-grid">
                     {/* Residents Card */}
